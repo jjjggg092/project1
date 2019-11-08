@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="blog-header py-3">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #d7d7d7">
+                <!-- Navbar content -->
+                <a class="navbar-brand">Book Review</a>
+                {% block button %}
+                {% endblock %}
+        </header>
+
+    {% block register %}
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
+
+    {% block search %}
+    {% endblock %}
+
+    {% block results %}
+    {% endblock %}
+
+
+</div>
+<footer class="page-footer font-small blue" style="margin-bottom: 0px;">
+<p class="float-right"><a href="#">Back to top</a></p>
+<div class="row">
+    <div class="col-12 col-md">
+        <img class="mb-2" src="img/letter-j-128.png" alt="j" width="24" height="24">
+        <img class="mb-2" src="img/letter-g-256.png" alt="g" width="24" height="24">
+        <small class="d-block mb-3 text-muted">&copy; 2019</small>
+    </div>
+</div>
+</footer>
+
+  </body>
+</html>

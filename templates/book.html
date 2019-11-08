@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Rate
+{% endblock %}
+
+{% block button %}
+<ul class="navbar-nav" style="padding: 0px">
+  <li class="nav-item">
+    <a class="navbar-brand" style:"color: rgb(51, 29, 96);  text-align: center;"><b>{{ username }}</b></a>
+  </li>
+</ul>
+<ul class="navbar-nav" style="padding: 0px;">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('logout') }}">Log out</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block body %}
+<div class="book">
+  <h3>Book Tittle: <span style="color: rgb(74, 44, 36); font: bold; font-size: 25px;">{{ book.tittle }}.</h3>
+  <p>Author: <span style="color: rgb(74, 44, 36); font: bold; font-size: 25px;">{{ book.author }}.</p>
+  <p>ISBN: <span style="color: rgb(74, 44, 36); font: bold; font-size: 25px;">{{ book.isbn }}.</p>
+  <p>Year: <span style="color: rgb(74, 44, 36); font: bold; font-size: 25px;">{{ book.year }}.</p>
+  <p>Rating: Count: {{ rev_count }} Average: {{ rev_avg }} </p>
+</div>
+<br>
+<div class="book">
+  <h3>Rate this book:</h3>
+  <form action="{{ url_for('review', book_id = book.id) }}" method="post">
+    <div class="rate">
+    <input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="text">5 stars</label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="text">4 stars</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text">3 stars</label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="text">2 stars</label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="text">1 star</label>
+  </div><br>
+  <div class="form-group">
+  <input name="review" class="form-control" type="text" placeholder="Write your review here." size="300" style="height: 110px;"><br>
+  <button type="submit" class="btn btn-outline-dark">Summit</button>
+ </div>
+  </form>
+    <p>{{ allow }}</p>
+</div>
+{% endblock %}
+
+{% block results %}
+<div class="coments-container">
+  {% for review in reviews%}
+  <div class="coments">
+    <hr>
+    <h4>{{ review.username }}, rating: {{ review.rate }}</h4>
+    <p>{{ review.review }}</p>
+  </div>
+  {% endfor %}
+{% endblock %}

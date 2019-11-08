@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Book Review
+{% endblock %}
+{% block button %}
+<span class="navbar-text" style="color: #ffffff; background-color: rgb(223, 99, 52); border-radius: 5px;">
+    {{ message | safe}}
+  </span>
+<form action="{{ url_for('login') }}" class="form-inline" method="post">
+  <input name="logusername" type="username" class="form-control" id="exampleInputEmail1"  placeholder="Username">
+  <input name="logpassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  <button class="btn btn-outline-primary" type="submit" ru>Login</button>
+</form>
+
+{% endblock %}
+
+
+{% block register %}
+  <h1>Welcome, here you can write some book reviews.</h1>
+  <div class="slbox">
+    <h3 style="text-align: center; color: #493632;">Register</h3>
+    <p>{{ reg_message | safe }}</p>
+    <form action="{{ url_for('register') }}" method="post">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input name="regname" type="name" class="form-control" id="exampleInputEmail1"  placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input name="regusername" type="username" class="form-control" id="exampleInputEmail1"  placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input name="regpassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input id="action" name="action" type="hidden" value="register">
+      </div>
+      <button type="submit" class="btn btn-outline-primary">Register</button>
+    </form>
+  </div>
+{% endblock %}
+
+{% block search %}
+{% endblock %}
+
+{% block results %}
+{% endblock %}

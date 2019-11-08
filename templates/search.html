@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block title %}
+{{ string }}
+{% endblock %}
+
+{% block button %}
+<ul class="navbar-nav" style="padding: 0px">
+  <li class="nav-item">
+    <a class="navbar-brand" style:"color: rgb(51, 29, 96);  text-align: center;"><b>{{ username }}</b></a>
+  </li>
+</ul>
+<ul class="navbar-nav" style="padding: 0px;">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('logout') }}">Log out</a>
+    </li>
+</ul>
+{% endblock %}
+
+
+{% block search %}
+<div class="search">
+  <h1>Welcome {{ name }}, ready to review some books?</h1>
+  <p style="text-align: center;">Search by: ISBN,title or author:</p>
+
+    <form action="{{ url_for('search') }}" method="post">
+      <div class="input-group mb-4">
+          <input name="string" type="search" placeholder="What're you searching for?" aria-describedby="button-addon5" class="form-control">
+            <div class="input-group-append">
+          <button id="button-addon5" type="submit" class="btn btn-outline-dark">Search</button>
+            </div>
+      </div>
+    </form>
+</div>
+<hr>
+<p style="text-align: center;">{{ string }}</p>
+<hr>
+<div class="books-searh">
+{% endblock %}
+
+{% block results %}
+{% for book in rbooks %}
+<a href="{{ url_for('book', book_id = book.id) }}" id="a-book">
+  <div id="nn" >
+    <p class="sb">Titte: <span style="color: rgb(74, 44, 36); font: bold;">{{ book.tittle }}.</span></p>
+    <p class="sb">Author: <span style="color: rgb(74, 44, 36); font: bold;">{{ book.author}}.</span></p>
+    <p class="sb">ISBN: <span style="color: rgb(74, 44, 36); font: bold;">{{ book.isbn}}.</span></p>
+    <p class="sb">Year: <span style="color: rgb(74, 44, 36); font: bold;">{{ book.year}}.</span></p>
+  </div>
+</a>
+{% endfor %}
+</div>
+{% endblock %}
+
+1
