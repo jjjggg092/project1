@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Livvic&display=swap");
+.container{
+   padding: 50px;
+   padding-bottom: auto;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 100%;
+   background-color: rgb(246, 251, 255);
+ }
+ .slbox{
+   margin-top: auto;
+   padding: 30px;
+   margin-left: auto;
+   margin-right: auto;
+   width: 450px;
+   background-color: #d7d7d7;
+   border-radius: 22px 23px 23px 23px;
+   -moz-border-radius: 22px 23px 23px 23px;
+   -webkit-border-radius: 22px 23px 23px 23px;
+   border: 3px solid #333d6b;
+ }
+ .book{
+   margin-top: auto;
+   padding: 30px;
+   margin-left: auto;
+   margin-right: auto;
+   width: 800px;
+   background-color: #d7d7d7;
+   border-radius: 22px 23px 23px 23px;
+   -moz-border-radius: 22px 23px 23px 23px;
+   -webkit-border-radius: 22px 23px 23px 23px;
+   border: 3px solid #333d6b;
+ }
+ footer{
+   background-color: #d7d7d7;
+   padding: 25px;
+   padding-bottom: 90px;
+ }
+.search{
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+}
+h1, h3{
+  text-align: center;
+  font-family: 'Livvic', sans-serif;
+  padding: 20px;
+}
+h4{
+  font-family: 'Livvic', sans-serif;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+p{
+  font-family: 'Livvic', sans-serif;
+  padding: 10px;
+  font-size: 15px;
+}
+.books-searh {
+    display: flex;
+    flex-wrap: wrap;
+}
+#a-book{
+  -webkit-box-shadow: 8px 8px 20px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 8px 8px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: 8px 8px 20px 0px rgba(0,0,0,0.75);
+  text-decoration: none;
+  border-radius: 25px;
+  color: #000000;
+}
+#a-book:hover{
+  -webkit-box-shadow: 14px 14px 20px 0px rgba(50, 83, 121, 0.75);
+  -moz-box-shadow: 14px 14px 20px 0px rgba(50, 83, 121, 0.75);
+  box-shadow: 14px 14px 20px 0px rgba(50, 83, 121, 0.75);
+  color: rgba(50, 83, 121, 0.75);
+}
+
+.books-searh > #a-book {
+    background-color: #babfd2;
+    font-size: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+}
+ *{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+.coments-container{
+  margin-top: auto;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
